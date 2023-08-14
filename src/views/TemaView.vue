@@ -1,6 +1,6 @@
 <template>
     <div>
-        About id: {{ id }}
+        Here will be 'threads' section lol :)
     </div>
 </template>
 

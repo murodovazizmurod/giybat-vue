@@ -20,7 +20,7 @@ header {
     position: sticky;
     margin: 2rem 0 1rem 0;
     background-color: #33333366;
-    background: url(https://i.imgur.com/THTwoyY.png) repeat center center;
+    background: url('../assets/THTwoyY.png') repeat center center;
     top: 0;
     z-index: 999;
     backdrop-filter: saturate(180%) blur(20px);

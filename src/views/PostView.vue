@@ -1,11 +1,11 @@
 <script setup>
-import Loading from '../components/Loading.vue';
-import Reactions from '../components/Reactions.vue'
+import PageLoading from '../components/PageLoading.vue';
+import PostReactions from '../components/PostReactions.vue'
 </script>
 
 <template>
     <div>
-        <Loading v-if="loading" />
+        <PageLoading v-if="loading" />
         <div class="back">
             <RouterLink :to="{ name: 'home' }" active-class="active">
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACIElEQVR4nO3Zz4tNYRjA8ReLW35MTSiJFREbUaNsFJFILFhY2VA2fhTJgqJQk5WNhY2FjWRDMrGZnR+lJCWR2BnKQgZh8NGZc25utzvjnnvvuXPeut8/4Dnn2/u87/M+zxtCjx7xgEUhdrARIyFWMANn8BtCjGA+7qkhxAbW412tRFQimIYj+FkvEY0I5mKokUA0IhjA28kkSi3iXyr9+J9EaUXQhxvNCJRWBGvwOo9E6URwEN+1xpfsWH6BYVzGcWzC7G6m0nXFMYbHOImlRUmswkvd5T52YXqnJPbjm6njFXa0IzALV5WHodytAJbjmfLxEdvziKzEc+XkD47GnFr1nMubZnvxVTk50crxm5weZUyz3Xll5uCa8jGKZblkOnBFKYoHLRXOrP9408IHZ2IhVmAddiZ5jit41OZePJBbJJPpx608X2oiZgUbcB5PWqgxfe00Vscm6tHzijSIvxqX8KlJmdMtiXSr1ZWu/mATd75kVSrtyszD3SJEqmBx/aysAXtCuyQnB07hVxEiNel8eJI5wXDoFNmGHSlCpAo24/MERXJJ6BRYkLWzhYgkYG1WEOs5FAoYYp8tcoiNrVmbXMvtIp8V3hcSPIzHT/Zl/ZCjEt1Dj3TlH9bJDIQYkRbP8RTO2BdiBTdrRC6GWMGWGpE7IVakxbLaAD4NMYMLmciHEDPYlomMhpiRXl4TxkLsSK/9/VP9Hz169Ajd4S9NrFjqtn2SUAAAAABJRU5ErkJggg=="
@@ -16,7 +16,7 @@ import Reactions from '../components/Reactions.vue'
             <p class="meta"><span v-html="post.created_date_long"></span></p>
             <h1 class="title" v-html="post.title"></h1>
             <span v-html="post.text"></span>
-            <Reactions :post="post" />
+            <PostReactions :post="post" />
         </article>
     </div>
 </template>

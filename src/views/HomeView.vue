@@ -1,12 +1,12 @@
 <script setup>
-import Loading from '../components/Loading.vue'
-import Posts from '../components/Posts.vue';
+import PageLoading from '../components/PageLoading.vue'
+import AllPosts from '../components/AllPosts.vue';
 </script>
 
 <template>
   <div class="page" id="postsContainer">
-    <Loading v-if="loading" />
-    <Posts :posts="posts" />
+    <PageLoading v-if="loading" />
+    <AllPosts :posts="posts" />
   </div>
 </template>
 
@@ -36,12 +36,10 @@ export default {
 
       try {
         var response = await fetch('https://4a73734eb4.pythonanywhere.com/api/posts')
-        var posts = await response.json()
-        var posts = posts.reverse()
+        var tposts = await response.json()
+        this.posts = tposts.reverse()
 
         this.loading = false
-        // Set loading to false after data is fetched
-        this.posts = posts
       } catch (error) {
         console.error('Error fetching data:', error)
       }

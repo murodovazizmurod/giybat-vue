@@ -1,10 +1,10 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import Header from './components/Header.vue'
+import HeaderBlock from './components/HeaderBlock.vue'
 </script>
 
 <template>
-  <Header />
+  <HeaderBlock />
   <div class="tabs">
     <RouterLink :to="{ name: 'home'}" active-class="active">Post</RouterLink>
     <RouterLink :to="{ name: 'tema'}" active-class="active">Live</RouterLink>

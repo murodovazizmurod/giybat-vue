@@ -18,6 +18,12 @@ const router = createRouter({
       component: Tema
     },
     {
+      path: '/tema/:temaId',
+      name: 'temaScroll',
+      component: Tema,
+      props: true
+    },
+    {
       path: '/post/:id',
       name: 'post',
       component: PostView

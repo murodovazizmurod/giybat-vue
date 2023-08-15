@@ -11,7 +11,6 @@ import PageLoading from '../components/PageLoading.vue'
                 <div class="content">
                     <div class="date" v-html="m.created_date"></div>
                     <div class="text" v-html="m.text"></div>
-                    <span @click="copyText(url + '#' + m.id)">permenant link</span>
                 </div>
             </div>
         </div>

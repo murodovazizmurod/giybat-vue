@@ -149,12 +149,15 @@ div.page > div.article > div.info > p {
 /* Dark theme scrollbar */
 ::-webkit-scrollbar {
   width: 0px;
+  height: 0px;
   background-color: #222;
 }
 
 /* Dark theme scrollbar handle */
 ::-webkit-scrollbar-thumb {
   width: 0px;
+  height: 0px;
+
   background-color: #444;
 }
 

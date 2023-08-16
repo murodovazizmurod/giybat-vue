@@ -41,7 +41,7 @@ export default {
 
         this.loading = false
       } catch (error) {
-        console.error('Error fetching data:', error)
+        location.reload()
       }
     }
   }

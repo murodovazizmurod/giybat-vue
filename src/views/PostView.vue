@@ -53,7 +53,7 @@ export default {
                 // Set loading to false after data is fetched
                 this.post = post
             } catch (error) {
-                console.error('Error fetching data:', error)
+                location.reload()
             }
         }
     }
@@ -152,4 +152,5 @@ h1.title {
     p.meta>span {
         font-size: .7rem;
     }
-}</style>
+}
+</style>

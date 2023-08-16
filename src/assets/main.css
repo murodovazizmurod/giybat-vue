@@ -26,8 +26,9 @@
 }
 
 @font-face {
-  font-family: Chirp;
+  font-family: 'Chirp';
   src: url('./Cantarell-Regular.ttf');
+  font-display: swap;
 }
 
 * {
@@ -37,7 +38,7 @@
   outline: none;
   color: #fafafa;
   cursor: auto;
-  font-family: Chirp, sans-serif;
+  font-family: 'Chirp', sans-serif;
 }
 
 ::selection {

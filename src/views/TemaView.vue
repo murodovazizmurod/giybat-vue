@@ -151,8 +151,8 @@ div.temas>div.temasList {
     overflow-x: auto;
     padding: .6rem 5px;
     position: sticky;
-    top: 70px;
-    background-color: #00000000;
+    top: 74px;
+    background-color: #0000005c;
     z-index: 999;
     backdrop-filter: saturate(100%) blur(15px);
     transition: background-color 0.1 ease-in-out;

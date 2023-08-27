@@ -61,11 +61,11 @@ export default {
             this.loading = true // Set loading to true when starting data fetching
 
             try {
-                var response = await fetch('https://4a73734eb4.pythonanywhere.com/api/temas')
+                var response = await fetch('http://127.0.0.1:5000/api/temas')
                 var tposts = await response.json()
                 this.posts = tposts.reverse()
 
-                var response = await fetch('https://4a73734eb4.pythonanywhere.com/api/tags')
+                var response = await fetch('http://127.0.0.1:5000/api/tags')
                 var msg = await response.json()
                 this.tags = msg
 
@@ -81,10 +81,10 @@ export default {
             this.changingTag = true
             try {
                 if (tema == 0) {
-                    var response = await fetch('https://4a73734eb4.pythonanywhere.com/api/temas')
+                    var response = await fetch('http://127.0.0.1:5000/api/temas')
 
                 } else {
-                    var response = await fetch('https://4a73734eb4.pythonanywhere.com/api/temas?tagId=' + tema)
+                    var response = await fetch('http://127.0.0.1:5000/api/temas?tagId=' + tema)
                 }
                 var msg = await response.json()
                 this.posts = msg.reverse()

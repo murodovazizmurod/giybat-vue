@@ -97,7 +97,7 @@ p {
 
 pre {
   background-color: rgb(36, 35, 35);
-  padding: 5px;
+  padding: 15px 8px;
   border-radius: 5px;
   display: block;
   white-space: pre;
@@ -107,7 +107,27 @@ pre {
   min-width: 100px;
   font-family: 'Roboto', monospace;
   font-size: 10pt;
+  position: relative;
 }
+
+/* pre::after {
+  content: 'copy';
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px 15px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+  background-color: #000;
+  transition: .2s all ease;
+}
+
+pre:hover::after {
+  background-color: #fff;
+  color: #000;
+  transition: .2s all ease;
+} */
 
 code {
   font-family: 'Roboto', monospace;

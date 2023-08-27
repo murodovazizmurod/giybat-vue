@@ -9,12 +9,12 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'Home',
       component: HomeView
     },
     {
       path: '/tema',
-      name: 'tema',
+      name: 'Temas',
       component: Tema
     },
     {
@@ -25,7 +25,7 @@ const router = createRouter({
     },
     {
       path: '/post/:id',
-      name: 'post',
+      name: 'Loading',
       component: PostView
     },
     {

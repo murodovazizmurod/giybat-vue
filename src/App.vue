@@ -6,8 +6,8 @@ import HeaderBlock from './components/HeaderBlock.vue'
 <template>
   <HeaderBlock />
   <div class="tabs">
-    <RouterLink :to="{ name: 'home'}" active-class="active">Post</RouterLink>
-    <RouterLink :to="{ name: 'tema'}" active-class="active">Live</RouterLink>
+    <RouterLink :to="{ name: 'Home'}" active-class="active">Post</RouterLink>
+    <RouterLink :to="{ name: 'Temas'}" active-class="active">Live</RouterLink>
   </div>
     <RouterView />
 </template>

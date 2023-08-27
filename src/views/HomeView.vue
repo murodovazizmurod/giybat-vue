@@ -13,6 +13,11 @@ import AllPosts from '../components/AllPosts.vue';
 
 <script>
 export default {
+  metaTags:
+  {
+    "og:title": "Home",
+    // other meta tags
+  },
   data() {
     return {
       loading: false,

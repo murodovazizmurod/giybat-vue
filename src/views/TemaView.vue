@@ -61,12 +61,12 @@ export default {
             this.loading = true // Set loading to true when starting data fetching
 
             try {
-                var response = await fetch('https://4a73734eb4.pythonanywhere.com/api/temas')
-                var tposts = await response.json()
+                var resT = await fetch('https://4a73734eb4.pythonanywhere.com/api/temas')
+                var tposts = await resT.json()
                 this.posts = tposts.reverse()
 
-                var response = await fetch('https://4a73734eb4.pythonanywhere.com/api/tags')
-                var msg = await response.json()
+                var resTag = await fetch('https://4a73734eb4.pythonanywhere.com/api/tags')
+                var msg = await resTag.json()
                 this.tags = msg
 
                 this.loading = false
@@ -81,18 +81,19 @@ export default {
             this.changingTag = true
             try {
                 if (tema == 0) {
-                    var response = await fetch('https://4a73734eb4.pythonanywhere.com/api/temas')
+                    var result = await fetch('https://4a73734eb4.pythonanywhere.com/api/temas')
 
                 } else {
-                    var response = await fetch('https://4a73734eb4.pythonanywhere.com/api/temas?tagId=' + tema)
+                    var result = await fetch('https://4a73734eb4.pythonanywhere.com/api/temas?tagId=' + tema)
                 }
-                var msg = await response.json()
+                var msg = await result.json()
                 this.posts = msg.reverse()
                 this.changingTag = false
             } catch (error) {
                 this.error = 'not found. going to all temas... in 3 seconds'
                 setTimeout(() => {
                     this.changeTema(0)
+                    this.error = null
                 }, 3000)
 
 
@@ -212,7 +213,7 @@ div.content>div.date {
     font-size: .7rem;
 }
 
-div.content > div.text > p > img {
+div.content>div.text>p>img {
     margin: 1rem 0;
     border-radius: 5px;
 }

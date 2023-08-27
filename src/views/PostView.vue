@@ -1,13 +1,18 @@
 <script setup>
 import PageLoading from '../components/PageLoading.vue';
-import PostReactions from '../components/PostReactions.vue'
+import PostReactions from '../components/PostReactions.vue';
+import { setTitle } from "@m-media/vue3-meta-tags";
 </script>
+
+
+
+
 
 <template>
     <div>
         <PageLoading v-if="loading" />
         <div class="back">
-            <RouterLink :to="{ name: 'home' }" active-class="active">
+            <RouterLink :to="{ name: 'Home' }" active-class="active">
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAACIElEQVR4nO3Zz4tNYRjA8ReLW35MTSiJFREbUaNsFJFILFhY2VA2fhTJgqJQk5WNhY2FjWRDMrGZnR+lJCWR2BnKQgZh8NGZc25utzvjnnvvuXPeut8/4Dnn2/u87/M+zxtCjx7xgEUhdrARIyFWMANn8BtCjGA+7qkhxAbW412tRFQimIYj+FkvEY0I5mKokUA0IhjA28kkSi3iXyr9+J9EaUXQhxvNCJRWBGvwOo9E6URwEN+1xpfsWH6BYVzGcWzC7G6m0nXFMYbHOImlRUmswkvd5T52YXqnJPbjm6njFXa0IzALV5WHodytAJbjmfLxEdvziKzEc+XkD47GnFr1nMubZnvxVTk50crxm5weZUyz3Xll5uCa8jGKZblkOnBFKYoHLRXOrP9408IHZ2IhVmAddiZ5jit41OZePJBbJJPpx608X2oiZgUbcB5PWqgxfe00Vscm6tHzijSIvxqX8KlJmdMtiXSr1ZWu/mATd75kVSrtyszD3SJEqmBx/aysAXtCuyQnB07hVxEiNel8eJI5wXDoFNmGHSlCpAo24/MERXJJ6BRYkLWzhYgkYG1WEOs5FAoYYp8tcoiNrVmbXMvtIp8V3hcSPIzHT/Zl/ZCjEt1Dj3TlH9bJDIQYkRbP8RTO2BdiBTdrRC6GWMGWGpE7IVakxbLaAD4NMYMLmciHEDPYlomMhpiRXl4TxkLsSK/9/VP9Hz169Ajd4S9NrFjqtn2SUAAAAABJRU5ErkJggg=="
                     style="width: 25px;" alt="Go back">
             </RouterLink>
@@ -23,6 +28,7 @@ import PostReactions from '../components/PostReactions.vue'
 
 
 <script>
+
 export default {
     data() {
         return {
@@ -40,6 +46,7 @@ export default {
             },
             { immediate: true }
         )
+
     },
     methods: {
         async getPost() {
@@ -52,12 +59,15 @@ export default {
                 this.loading = false
                 // Set loading to false after data is fetched
                 this.post = post
+                setTitle(post.title);
+
             } catch (error) {
                 location.reload()
             }
         }
-    }
+    },
 }
+
 </script>
 
 

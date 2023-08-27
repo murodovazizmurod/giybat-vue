@@ -1,6 +1,7 @@
 <script setup>
 import PageLoading from '../components/PageLoading.vue'
 import AllPosts from '../components/AllPosts.vue';
+import { setTitle, setDescription } from '@m-media/vue3-meta-tags';
 </script>
 
 <template>
@@ -13,11 +14,6 @@ import AllPosts from '../components/AllPosts.vue';
 
 <script>
 export default {
-  metaTags:
-  {
-    "og:title": "Home",
-    // other meta tags
-  },
   data() {
     return {
       loading: false,
@@ -34,6 +30,8 @@ export default {
       },
       { immediate: true }
     )
+    setTitle("Welcome to G'iybat");
+    setDescription('here i will share my thoughts and all in my mind in live section')
   },
   methods: {
     async fetchData() {

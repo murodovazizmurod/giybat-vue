@@ -1,7 +1,7 @@
 <script setup>
 import PageLoading from '../components/PageLoading.vue';
 import PostReactions from '../components/PostReactions.vue';
-import { setTitle } from "@m-media/vue3-meta-tags";
+import { setTitle, setDescription } from "@m-media/vue3-meta-tags";
 </script>
 
 
@@ -28,7 +28,6 @@ import { setTitle } from "@m-media/vue3-meta-tags";
 
 
 <script>
-
 export default {
     data() {
         return {
@@ -60,10 +59,29 @@ export default {
                 // Set loading to false after data is fetched
                 this.post = post
                 setTitle(post.title);
+                setDescription(this.extractHtmlTextSnippet(post.text, 130) + '...')
 
             } catch (error) {
                 location.reload()
             }
+
+        },
+        extractHtmlTextSnippet(text, maxLength) {
+            const strippedText = text.replace(/<[^>]+>/g, ''); // Remove HTML tags
+            const trimmedText = strippedText.trim();
+
+            if (trimmedText.length <= maxLength) {
+                return trimmedText;
+            }
+
+            const substring = trimmedText.substring(0, maxLength + 1);
+            const lastSpaceIndex = substring.lastIndexOf(' ');
+
+            if (lastSpaceIndex !== -1) {
+                return substring.substring(0, lastSpaceIndex);
+            }
+
+            return trimmedText.substring(0, maxLength);
         }
     },
 }

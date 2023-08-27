@@ -1,5 +1,6 @@
 <script setup>
 import PageLoading from '../components/PageLoading.vue'
+import { setDescription } from '@m-media/vue3-meta-tags';
 </script>
 
 
@@ -46,15 +47,16 @@ export default {
             tag: 0
         }
     },
-    created() {
+    async created() {
         // watch the params of the route to fetch the data again
-        this.$watch(
+        await this.$watch(
             () => this.$route.params,
             () => {
                 this.fetchData()
             },
             { immediate: true }
         )
+        setDescription('here i will write short/medium messages/posts about many topics')
     },
     methods: {
         async fetchData() {
@@ -87,7 +89,7 @@ export default {
                     var result = await fetch('https://4a73734eb4.pythonanywhere.com/api/temas?tagId=' + tema)
                 }
                 var msg = await result.json()
-                this.posts = msg.reverse()
+                this.posts = msg.reverse()  
                 this.changingTag = false
             } catch (error) {
                 this.error = 'not found. going to all temas... in 3 seconds'

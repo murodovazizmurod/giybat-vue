@@ -1,7 +1,7 @@
 <script setup>
 import PageLoading from '../components/PageLoading.vue'
 import AllPosts from '../components/AllPosts.vue';
-import { setTitle, setDescription } from '@m-media/vue3-meta-tags';
+import { setTitle,  setDescription } from '@m-media/vue3-meta-tags';
 </script>
 
 <template>

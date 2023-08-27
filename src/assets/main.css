@@ -65,6 +65,47 @@
   color: #000;
 }
 
+
+
+/* Dark theme scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background-color: #222;
+}
+
+/* Dark theme scrollbar handle */
+::-webkit-scrollbar-thumb {
+  width: 0px;
+  height: 0px;
+
+  background-color: #444;
+}
+
+/* Dark theme scrollbar handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #666;
+}
+
+pre {
+  background-color: rgb(36, 35, 35);
+  padding: 5px;
+  border-radius: 5px;
+  display: block;
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  max-width: 100%;
+  min-width: 100px;
+  font-family: 'Roboto', monospace;
+  font-size: 10pt;
+}
+
+pre::-webkit-scrollbar {
+  height: 2px;
+}
+
+
 .prevent-select {
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
@@ -143,26 +184,4 @@ div.page > div.article > div.info > p {
   div.page > div.article > div.info > p {
     font-size: 0.7em;
   }
-}
-
-
-
-/* Dark theme scrollbar */
-::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
-  background-color: #222;
-}
-
-/* Dark theme scrollbar handle */
-::-webkit-scrollbar-thumb {
-  width: 0px;
-  height: 0px;
-
-  background-color: #444;
-}
-
-/* Dark theme scrollbar handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background-color: #666;
 }

@@ -212,6 +212,11 @@ div.content>div.date {
     font-size: .7rem;
 }
 
+div.content > div.text > p > img {
+    margin: 1rem 0;
+    border-radius: 5px;
+}
+
 div.postTag>span {
     border: 1px solid #fafafa;
     padding: 5px;
